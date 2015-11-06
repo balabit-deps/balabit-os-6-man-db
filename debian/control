@@ -1,0 +1,27 @@
+Source: man-db
+Section: doc
+Priority: important
+Maintainer: Colin Watson <cjwatson@debian.org>
+Standards-Version: 3.9.6
+Build-Depends: dpkg (>= 1.16.1~), debhelper (>= 9~), flex, groff, libgdbm-dev, po4a, zlib1g-dev, libpipeline-dev (>= 1.4.0), pkg-config, dh-autoreconf, autopoint
+Homepage: http://man-db.nongnu.org/
+Vcs-Git: git://anonscm.debian.org/pkg-man-db/man-db.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-man-db/man-db.git
+
+Package: man-db
+Architecture: any
+Pre-Depends: dpkg (>= 1.16.1~)
+Depends: groff-base (>= 1.18.1.1-15), bsdmainutils, debconf (>= 1.2.0) | debconf-2.0, ${shlibs:Depends}, ${misc:Depends}
+Suggests: groff, less, www-browser
+Provides: man, man-browser
+Conflicts: man, suidmanager (<< 0.50)
+Breaks: manpages-zh (<< 1.5.2-1.1)
+Replaces: man, nlsutils, manpages-de (<< 0.5-4), manpages-zh (<< 1.5.2-1.1)
+Multi-Arch: foreign
+Description: on-line manual pager
+ This package provides the man command, the primary way of examining the
+ on-line help files (manual pages). Other utilities provided include the
+ whatis and apropos commands for searching the manual page database, the
+ manpath utility for determining the manual page search path, and the
+ maintenance utilities mandb, catman and zsoelim. man-db uses the groff
+ suite of programs to format and display the manual pages.
